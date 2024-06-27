@@ -7,6 +7,10 @@
     --color-fondo: #171717;
     --color-texto: #fff;
     --color-azul: #00bef2;
+    /* degradados para copiar y cambiar valores ejemplo: '0.9 a 0.8'*/
+    --color-azul-degrad: rgba(0,190,242,0.9);
+    --color-primario-degrad:rgba(30,30,29,0.89);
+    --color-secundario-degrad: rgba(252,191,0,0.82);
 }
 *{
     margin: 0;
@@ -15,11 +19,11 @@
     box-sizing: border-box;
     border: 0;
 }
-body {
+body{
     background-color: var(--color-fondo);
     color: var(--color-texto);
 }
-.contenedor {
+.contenedor{
     padding: 10px 10%;
 }
 
@@ -35,11 +39,14 @@ nav{
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: var(--color-primario);
 }
 .imglogo{
     width: 80px;
     margin-left: 10px;
+}
+.imglogo:hover{
+    filter: drop-shadow(1px 1px 10px var(--color-azul-degrad));
 }
 nav ul li{
     display: inline-block;
@@ -71,57 +78,103 @@ nav ul li a:hover::after{
 /* Menu desplegable */
 nav .fa-solid{
     display: none;
+    margin-right: 20px;
 }
-
-.titulo, .tituloTxt, .btn-home {
+/* ----- titulos y texto centrado en la pagina ------ */
+.titulo, .tituloTxt, .btn-home, .btn{
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10% 0;
 }
 .imgTitulo{
-    width: 280px;
+    width: 400px;
+    filter: drop-shadow(-2px 2px 15px rgba(0, 0, 0, 0.9));
+    margin: 8% 0;
+}
+.tituloTxt{
+    font-size: 20px;
+    font-weight: 700;
+    filter: drop-shadow(-2px 2px 15px rgba(0, 0, 0, 1));
+    margin-bottom: 200px;
 }
 
-/* Boton */
+/* --------- Boton header ----- */
 .btn {
-    
-    font-family: Roboto, sans-serif;
-    font-weight: 200;
-    font-size: 14px;
+    font-weight: 500;
+    font-size: 20px;
     display: inline-block;
-    background: linear-gradient(90deg, #1E1E1D 49%, #fcbf00 100%);
+    background: linear-gradient(90deg, #1E1E1D 49%, #fac834 100%);
     padding: 12px 37px;
-    border: solid #fcbf00 2px;
+    border: solid #fcbf00 1px;
     box-shadow: rgb(0, 0, 0) 0px 6px 27px 12px;
     border-radius: 11px 50px 0px;
-    transition: 793ms;
+    transition: 0.5s;
     transform: translateY(0);
     flex-direction: row;
     align-items: center;
-    justify-content: center; /* Para centrar horizontalmente */
-    text-align: center; /* Para centrar el texto */
     cursor: pointer;
-    text-decoration: none; /* Para quitar el subrayado */
-    color: #FCBF00;
+    text-decoration: none;
+    color: var(--color-texto);
 }
-
 /* Estilos al hacer hover en los botones */
 .btn:hover {
     /* background: none; */
-    transition : 793ms;
+    transition : 0.5s;
     padding: 10px 46px;
-    transform : translateY(-0px);
     background: linear-gradient(90deg, #1E1E1D 49%, #fcbf00 100%);
-    color: #fcbf00;
-    border: solid 2px #fcbf00;
+    color: var(--color-texto);
+    border: solid 1px #fcbf00;
 
 }
+/* me quede en productos   */
+
+
+
+
+
 
 /* ------------ responsive ------------ */
 @media only screen and (max-width: 600px){
+    /* ------ Header ----------- */
     .imgTitulo{
         width: 200px;
+        margin: 20px;
     }
+    .tituloTxt{
+        margin: 150px 0;
+        font-size: 20px;
+    }
+    /* ------- Boton de navegador ---------*/
+    nav .fa-solid{
+        display: block;
+        font-size: 20px;
+    }
+    nav ul{
+        background: var(--color-primario-degrad);
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 250px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 30px;
+    }
+    nav ul .fa-solid{
+        position: absolute;
+        top:25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    nav ul li a {
+        display: inline-block;
+        font-weight: 500;
+        font-size: 25px;
+    }
+    /* ---------   --------------- */
 }

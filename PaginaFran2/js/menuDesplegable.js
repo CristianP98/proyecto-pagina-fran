@@ -1,8 +1,8 @@
-let sidmenu = document.getElementById("menuDesplegable");
+let menuDesplegable = document.getElementById("menuDesplegable");
 
 function openmenu(){
-    sidmenu.style.right = "0";
+    menuDesplegable.style.right = "0";
 }
 function closemenu(){
-    sidmenu.style.right = "-200px";
+    menuDesplegable.style.right = "-250px";
 }
