@@ -13,6 +13,7 @@
     <!-- Fin Fuentes -->
     <!-- Css -->
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/carrusel.css">
     <!-- Fin Css -->
     <!-- fontawesome -->
      <script src="https://kit.fontawesome.com/d91e44ae42.js" crossorigin="anonymous"></script>
@@ -46,20 +47,70 @@
         </div>
       </div>
     </div>
+    <!-- pruebas de carrusel -->
     <div id="productos">
-      <div class="contenedor">
-        <h1>Productes</h1>
-        <div class="listaProductos">
-          <div class="cuadros">
-              <img src="/img/Camiseta_gbcn.png">
-                  <div class="capas">
-                      <h3>Samarreta</h3>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur qui veritatis accusantium suscipit iure assumenda nesciunt facilis, similique deserunt autem nisi dolor sunt ipsam porro corporis molestiae voluptates quae dolore?</p>
-                      <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                  </div>
-          </div>
-      </div>
+      <h1>PRODUCTES</h1>
     </div>
+    <main>
+      <div class="hero-left">
+        <div class="layers">
+          <div class="layer layer-displayed" data-scene="1">
+            <span>SAMARRETA</span>
+            <div class="layer__image" style="background-image: url('/img/Camiseta_gbcn.png')"></div>
+          </div>
+          <div class="layer" data-scene="2">
+            <span>MÀNIGA</span>
+            <div class="layer__image" style="background-image: url('/img/Manguitos_sinfondo.png')"></div>
+            <div class="layer__info">
+            </div>
+          </div>
+          <div class="layer" data-scene="3">
+            <span>CLAUERS</span>
+            <div class="layer__image" style="background-image: url('/img/llavero_sinfondo.png')"></div>
+            <div class="layer__info">
+            </div>
+          </div>
+        </div>
+        <button onclick="switchLayer(2)"><</button>
+        <button onclick="switchLayer()">></button>
+      </div>
+      <div class="hero-right">
+        <div class="layer layer-displayed" data-scene="1"></div>
+        <div class="layer" data-scene="2"></div>
+        <div class="layer" data-scene="3"></div>
+        <div class="photo-frame">
+          <div class="layer layer-displayed" style="background-image: url('/img/image_camiseta.png')" data-scene="1"></div>
+          <div class="layer" style="background-image: url('https://images.unsplash.com/photo-1536099876051-79f4cbffeed1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=451b9215ee8acc20d5d7ea354aab570e&auto=format&fit=crop&w=1350&q=80')" data-scene="2"></div>
+          <div class="layer" style="background-image: url('https://images.unsplash.com/photo-1512821062947-6eda5253c3e2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=305dedf0e09581de0ee68ab2c9523955&auto=format&fit=crop&w=1351&q=80')" data-scene="3"></div>
+          <div class="cover"></div>
+        </div>
+        <div class="photo-name">
+          <div class="photo-name__wrapper">
+            <div class="layer layer-displayed" data-scene="1">
+              <span class="photo-name__title">SAMARRETA</span>
+              <span>GAMING E-CLUB BARCELONA</span>
+            </div>
+            <div class="layer" data-scene="2">
+              <span class="photo-name__title">AUSTIN SMITH</span>
+              <span>RIDING THE POW</span>
+            </div>
+            <div class="layer" data-scene="3 ">
+              <span class="photo-name__title">SALLY BLUE</span>
+              <span>RIDING THE SPLASH</span>
+            </div>
+          </div>
+        </div>
+        <div class="photo-frame">
+          <div class="layer layer-displayed" style="background-image: url('/img/cod2.jpg')" data-scene="1"></div>
+          <div class="layer" style="background-image: url('https://images.unsplash.com/photo-1522056615691-da7b8106c665?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4f51ed1121800f23da98176659ba7506&auto=format&fit=crop&w=1352&q=80')" data-scene="2"></div>
+          <div class="layer" style="background-image: url('https://images.unsplash.com/photo-1478700485868-972b69dc3fc4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=918195bdc5a37a2f412cf49234183427&auto=format&fit=crop&w=1350&q=80')" data-scene="3"></div>
+          <div class="cover"></div>
+        </div>
+      </div>
+    </main>
+
+
+    <script src="/js/carrusel.js"></script>
     <script src="/js/menuDesplegable.js"></script>
   </body>
 </html>

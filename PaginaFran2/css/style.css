@@ -26,7 +26,7 @@ body{
 .contenedor{
     padding: 10px 10%;
 }
-
+/* ------------------ Header ------------------ */
 #header{
     width: 100%;
     height: 100vh;
@@ -74,7 +74,6 @@ nav ul li a::after{
 nav ul li a:hover::after{
     width: 100%;
 }
-
 /* Menu desplegable */
 nav .fa-solid{
     display: none;
@@ -98,7 +97,6 @@ nav .fa-solid{
     filter: drop-shadow(-2px 2px 15px rgba(0, 0, 0, 1));
     margin-bottom: 200px;
 }
-
 /* --------- Boton header ----- */
 .btn {
     font-weight: 500;
@@ -127,8 +125,14 @@ nav .fa-solid{
     border: solid 1px #fcbf00;
 
 }
-/* me quede en productos   */
-
+/* ------------------ productos ------------------ */
+#productos h1 {
+     text-align: center;
+     justify-content: center;
+     font-size: 50px;
+     margin: 10px 0;
+     font-weight: 700;
+}
 
 
 
