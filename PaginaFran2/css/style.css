@@ -19,6 +19,9 @@
     box-sizing: border-box;
     border: 0;
 }
+html {
+    scroll-behavior: smooth;
+}
 body{
     background-color: var(--color-fondo);
     color: var(--color-texto);
@@ -40,6 +43,11 @@ nav{
     justify-content: space-between;
     flex-wrap: wrap;
     background-color: var(--color-primario);
+
+    /* Barra de navegacion fija */
+    position: fixed;
+    width: 100%;
+    z-index: 4;
 }
 .imglogo{
     width: 80px;
@@ -90,6 +98,9 @@ nav .fa-solid{
     width: 400px;
     filter: drop-shadow(-2px 2px 15px rgba(0, 0, 0, 0.9));
     margin: 8% 0;
+    position: relative;
+    top: 80px;
+    margin-bottom: 200px;
 }
 .tituloTxt{
     font-size: 20px;
@@ -134,6 +145,167 @@ nav .fa-solid{
      font-weight: 700;
 }
 
+/*--------------------- Equipo -------------------------*/
+
+.equipoTxt{
+  text-align: center;
+  justify-content: center;
+  margin: 10px 0;
+  background-color: rgba(0,190,242,0.2); ;
+  margin: 0;
+}
+.equipoTxt h1 {
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.equipoTxt p {
+  font-size: 18px;
+  padding: 20px;
+}
+section {
+  background-image: url("/img/equipos/31.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+  padding: 0;
+  margin: 0;
+}
+
+section:has(.lol-card:hover) {
+  background-image: url("/img/equipos/Fondo-League-of-leguends.jpg");
+}
+
+section:has(.valorant-card:hover) {
+  background-image: url("/img/equipos/Fondo-valorant.jpg");
+}
+
+section:has(.fifa-card:hover) {
+  background-image: url("/img/equipos/fondo-fifa.jpeg");
+}
+
+.container {
+  display: flex;
+  backdrop-filter: blur(4px);
+  height: 100vh;
+  font-weight: bold;
+}
+
+.card-container {
+  position: relative;
+  height: 450px;
+  width: fit-content;
+  display: flex;
+  justify-content:center;
+  margin: 0 auto;
+  perspective: 1000px;
+  cursor: pointer;
+  margin-top: 10%;
+}
+
+.card-container .card {
+  width: 300px;
+  background: url("/img/equipos/Fondo1-valorant.jpg.png");
+  background-size: 100%;
+  background-position: 60% 60%;
+  background-repeat: no-repeat;
+  transition: all 0.1s linear;
+}
+
+.card-container .lol {
+  background: url("/img/equipos/Fondo1-League-of-leguends.jpg.png");
+}
+
+.card-container .fifa {
+  background: url("/img/equipos/Fondo1-fifa.jpg.png");
+}
+
+
+.card-container::before {
+  position: absolute; 
+  color: white;
+  font-size: 42px;
+  bottom: 10px;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(30%);
+  transition: all 0.4s linear;
+}
+
+.card-container .card::after {
+  content: '';
+  position: absolute; 
+  z-index: 1;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  background: rgb(243,236,230);
+background: linear-gradient(180deg, transparent 20%, rgba(0,0,0,0.8) 100%);
+  
+}
+
+.lol-card::before {
+  content: 'League Of Legends';
+  font-size: 32px;
+}
+
+.valorant-card::before {
+  content: 'Valorant';
+}
+
+.fifa-card::before {
+  content: 'Fifa';
+}
+
+.avatar {
+  position: absolute;
+  bottom: 0;
+  width: 280px;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(0);
+  transition: transform 0.3s linear, opacity 0.3s linear;
+}
+
+.lol-card .avatar {
+  width: 450px;
+}
+
+.valorant-card .avatar {
+  width: 450px;
+}
+
+.fifa-card .avatar {
+  width: 500px;
+}
+
+
+.card-container:hover .avatar {
+  transform: translateY(-20%);
+  opacity: 1;
+}
+
+.card-container:hover .card {
+  transform: rotateX(20deg);
+  
+}
+
+.card-container:hover::before {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+
+.card-container:hover {
+  -webkit-box-shadow: 0px 300px 90px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 300px 90px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 300px 90px 0px rgba(0,0,0,0.75);
+}
+
+
+
 
 
 
@@ -147,7 +319,7 @@ nav .fa-solid{
     }
     .tituloTxt{
         margin: 150px 0;
-        font-size: 20px;
+        font-size: 18px;
     }
     /* ------- Boton de navegador ---------*/
     nav .fa-solid{
